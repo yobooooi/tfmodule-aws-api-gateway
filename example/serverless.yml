@@ -1,0 +1,40 @@
+service: devops-serverless-api-poc
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: eu-west-1
+  profile: globee
+  deploymentBucket: eng-serverless-deployment-bucket
+  
+functions:
+  health:
+    handler: src/main.healthcheck
+    name: devops-api-poc-healthcheck
+    description: Description of Handler
+    memorySize: 512
+    timeout: 10
+    environment:
+      ENV_VAR_1: env_var_1
+      ENV_VAR_2: env_var_2
+      ENV_VAR_3: env_var_3
+  env:
+    handler: src/main.env
+    name: devops-api-poc-env
+    description: Description of Hanlder
+    memorySize: 512
+    timeout: 10
+    environment:
+      ENV_VAR_1: env_var_1
+      ENV_VAR_2: env_var_2
+      ENV_VAR_3: env_var_3
+  post:
+    handler: src/main.post_example
+    name: devops-api-poc-post
+    description: Description of Hanlder
+    memorySize: 512
+    timeout: 10
+    environment:
+      ENV_VAR_1: env_var_1
+      ENV_VAR_2: env_var_2
+      ENV_VAR_3: env_var_3
