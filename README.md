@@ -78,7 +78,7 @@ Serverless: devops-api-poc-post: $LATEST, 2, 3, 4, 5
 For earch function you want to create a `dev` and a `prod` alias. We'll set the `dev` alias to always point to the latest version of the code. For production, this largely depends on what code needs to go live and can be easily set and updated on the fly
 
 ``` bash
-$ aws lambda update-alias --function-name devops-api-poc-healthcheck --function-version '$LATEST' --name dev --profile globee --region eu-west-1
+$ aws lambda update-alias --function-name devops-api-poc-healthcheck --function-version '$LATEST' --name dev 
 {
     "AliasArn": "arn:aws:lambda:eu-west-1:834366213304:function:devops-api-poc-healthcheck:dev",
     "Name": "dev",
@@ -86,7 +86,7 @@ $ aws lambda update-alias --function-name devops-api-poc-healthcheck --function-
     "Description": "",
     "RevisionId": "cd6aa4df-7b53-406f-b76b-e50cfb06eb10"
 }
-$ aws lambda update-alias --function-name devops-api-poc-healthcheck --function-version 17 --name prod --profile globee --region eu-west-1
+$ aws lambda update-alias --function-name devops-api-poc-healthcheck --function-version 17 --name prod
 {
     "AliasArn": "arn:aws:lambda:eu-west-1:834366213304:function:devops-api-poc-healthcheck:prod",
     "Name": "prod",
