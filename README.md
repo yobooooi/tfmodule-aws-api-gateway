@@ -10,8 +10,7 @@ The purpose of this module is to standardise the way we build API Gateways in a 
 The module creates an API Gateway. It creates the API Resources using the `api_definition` variable where the `path`, `lambda_function` and `HTTP Method` is defined for the specific endpoint. The module also creates the `dev` and `prod` stages defined in the `stage_variables` variable. The `lambdaAlias` stage variable is used to target the functions using its `dev` and `prod` aliases [2]. Lastly worth noting the module also allows the API Gateway the IAM permissions to invoke the AWS Lambda functions configured. Note that to use this module, the AWS Lambda functions will need to have been deployed. 
 
 ## Additional Reading
-1. [Set up WNS repo for Lambdas with pipeline integration to dev and prod lambdas](https://technoponies.atlassian.net/browse/DEVOP-449) 
-2. [Lambda Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)
+1. [Lambda Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)
 
 ## Future Work
 - [ ] Dynamically scale IAM Permissions for all stages configured 
